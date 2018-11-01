@@ -18,7 +18,7 @@
 <body>
 	
 	
-	<div class="owl-carousel owl-theme">	    
+	<div class="owl-carousel owl-theme" id="owl-demo">	    
                 
                         <div class="col-md-4 col-sm-4 item">
                             <div class="feature-box text-center">
@@ -73,7 +73,8 @@ C/O https://placeholder.com/" alt="">
 	</div>
 
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	<!-- <link  href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- <script src="js/jquery.js"></script> -->
 	<!-- <script src="js/bootstrap.min.js"></script> -->
 	<!-- Owl Carousel -->	
@@ -82,30 +83,20 @@ C/O https://placeholder.com/" alt="">
     <!-- <script src="js/imagesloaded.js"></script> -->
 
     <script>
-    	$(document).ready(function(){
+    	$(document).ready(function() {
 
-// alert('helo rana');
-    	
-    	$('.owl-carousel').owlCarousel({
+          // var owl = $(".owl-carousel");
 
-    rtl:true,
-    loop:true,
-    margin:10,
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:5
-        }
-    }
-});
+          $(".owl-carousel").owlCarousel({
+            slideSpeed : 1000,
+            paginationSpeed : 500,
+            singleItem:true,
+            navigation : false,
+            transitionStyle:"backSlide",
+            afterAction:function(){$(window).trigger("resize");},
+        });
 
-    	});
+      });
     </script>
 </body>
 </html>
